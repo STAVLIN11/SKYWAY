@@ -6,209 +6,149 @@
   <title>Skyway Health Food - Home</title>
   <style>
     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
       background-image: url('images/background.jpg');
       background-size: cover;
       background-attachment: fixed;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      color: #000;
+      background-position: center;
+      color: black;
     }
-
-    .navbar {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 15px;
+    nav {
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: rgba(0, 128, 0, 0.8);
+      padding: 15px;
     }
-
-    .navbar a {
-      margin: 0 20px;
+    nav a {
+      color: white;
+      background-color: green;
       text-decoration: none;
-      font-size: 18px;
-      color: #000;
-      background: #fdd835;
       padding: 10px 20px;
+      margin: 0 10px;
       border-radius: 5px;
-      transition: background 0.3s ease;
+      font-size: 18px;
     }
-
-    .navbar a:hover {
-      background: #ffeb3b;
-    }
-
-    .product-container {
-      padding: 30px;
-    }
-
     .product-box {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(211, 211, 211, 0.7);
       margin: 50px auto;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 1000px;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-in-out;
-    }
-
-    .product-box.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .product-box img {
-      width: 250px;
-      margin: 10px;
+      padding: 20px;
+      width: 80%;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
     }
-
-    h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
+    .product-box:nth-child(even) {
+      flex-direction: row-reverse;
     }
-
-    ul {
+    .product-img {
+      flex: 1;
+      text-align: center;
+    }
+    .product-img img {
+      width: 250px;
+      height: auto;
+    }
+    .product-details {
+      flex: 2;
+      padding: 0 20px;
       font-size: 20px;
-      line-height: 1.7;
-      list-style: none;
-      padding: 0;
     }
-
-    ul li strong {
-      display: block;
-      margin: 15px 0 5px;
-      font-size: 22px;
-      color: #444;
+    .price {
+      font-weight: bold;
+      margin-top: 10px;
     }
-
-    .add-button {
-      background: #ffee58;
-      padding: 14px 30px;
-      margin-top: 20px;
-      font-size: 20px;
+    .add-to-cart {
+      background-color: yellowgreen;
+      color: black;
+      padding: 12px 20px;
       border: none;
+      font-size: 20px;
+      margin-top: 15px;
+      border-radius: 5px;
       cursor: pointer;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .add-button:hover {
-      background: #fdd835;
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ NAVIGATION -->
-  <div class="navbar">
+  <nav>
     <a href="index.html">Home</a>
     <a href="cart.html">Cart</a>
-    <a href="meetings.html">Meetings</a> <!-- ✅ Meetings Button Added -->
+    <a href="meetings.html">Meetings</a>
+  </nav>
+
+  <!-- D Care -->
+  <div class="product-box">
+    <div class="product-img">
+      <img src="images/dcare.jpg" alt="D Care" />
+      <div class="price">₹2500</div>
+      <button class="add-to-cart" onclick="addToCart('D Care', 2500, 'images/dcare.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-details">
+      <p>D Care helps regulate blood sugar levels, supports insulin sensitivity, and improves overall energy levels.</p>
+      <p>Controls glucose naturally. Supports pancreas health. Improves blood flow and reduces fatigue.</p>
+      <p><strong>தமிழ்:</strong> ரத்த சர்க்கரையை கட்டுப்படுத்துகிறது, இன்சுலின் செயல்பாட்டை மேம்படுத்துகிறது, உடல் உற்சாகத்தை அதிகரிக்கிறது.</p>
+      <p><strong>മലയാളം:</strong> രക്തത്തിലെ ഷുഗർ നില নিয়ന്ത്രണം, ഇൻസുലിൻ പ്രവർത്തനം മെച്ചപ്പെടുത്തുന്നു, ഉൽസാഹം വർദ്ധിപ്പിക്കുന്നു.</p>
+    </div>
   </div>
 
-  <!-- ✅ PRODUCTS CONTAINER -->
-  <div class="product-container">
-
-    <!-- <!-- === D CARE === -->
-    <div class="product-box">
-      <img src="images/dcare.png" alt="D Care">
-      <img src="images/dcaredp.png" alt="D Care Display">
-      <h2>D Care - ₹2500</h2>
-      <ul>
-        <li><strong>English:</strong> Regulates blood sugar, boosts insulin sensitivity, supports pancreas health, improves energy, reduces cravings, promotes metabolism, balances hormones, reduces fatigue, supports liver, controls inflammation, improves glucose uptake, supports vision, improves skin, prevents complications, and builds immunity.</li>
-        <li><strong>Tamil:</strong> இரத்தத்தில் சர்க்கரையை கட்டுப்படுத்துகிறது, இன்சுலின் செறிவை அதிகரிக்கிறது, பாங்கிரியாஸ் சுகநலத்திற்கு உதவுகிறது, சக்தியை அதிகரிக்கிறது, இனிப்பு தேவையை குறைக்கிறது, மூட்டுவலியை கட்டுப்படுத்துகிறது, கல்லீரல் ஆரோக்கியத்தை மேம்படுத்துகிறது, தோலை பராமரிக்கிறது.</li>
-        <li><strong>Malayalam:</strong> രക്തത്തിലെ ഷുഗര്‍ നിയന്ത്രണം, ഇന്‍സുലിന്‍ പ്രതികരണം, പാന്‍ക്രിയാസ് സംരക്ഷണം, ഊര്‍ജം വര്‍ദ്ധനം, ത്വക് സംരക്ഷണം, ദാഹം കുറയ്ക്കല്‍, വീക്കം കുറയ്ക്കല്‍, സംയുക്താരോഗ്യം മെച്ചപ്പെടുത്തല്‍.</li>
-      </ul>
-      <button class="add-button" onclick="addToCart('D Care', 2500, 'images/dcare.png')">Add to Cart</button>
+  <!-- Slim Care -->
+  <div class="product-box">
+    <div class="product-img">
+      <img src="images/slimcare.jpg" alt="Slim Care" />
+      <div class="price">₹2000</div>
+      <button class="add-to-cart" onclick="addToCart('Slim Care', 2000, 'images/slimcare.jpg')">Add to Cart</button>
     </div>
-
-    <!-- === BONE CARE === -->
-    <div class="product-box">
-      <img src="images/bonecare.png" alt="Bone Care">
-      <img src="images/bonecaredp.png" alt="Bone Care Display">
-      <h2>Bone Care - ₹2000</h2>
-      <ul>
-        <li><strong>English:</strong> Strengthens bones, boosts joint health, prevents osteoporosis, increases calcium absorption, reduces pain, supports cartilage, builds density, improves flexibility, anti-inflammatory, promotes mobility, eases arthritis, nourishes ligaments, supports spine health, boosts strength, prevents fractures.</li>
-        <li><strong>Tamil:</strong> எலும்புகளை உறுதிப்படுத்துகிறது, மூட்டுவலியை குறைக்கிறது, மூட்டு இயக்கத்தை மேம்படுத்துகிறது, கால்சியம் உறிஞ்சலை அதிகரிக்கிறது, நரம்புகளுக்கு ஊட்டச்சத்து வழங்குகிறது, வலிமையை அதிகரிக்கிறது.</li>
-        <li><strong>Malayalam:</strong> എല്ലുകള്‍ക്കുള്ള ദൃഢത, സംയുക്താരോഗ്യം, ഓസ്റ്റിയോപൊറോസിസ് തടയല്‍, കാല്ഷ്യം അവശോഷണം, വെന്തിക്കല്‍ നിയന്ത്രണം, ചലനക്ഷമത മെച്ചപ്പെടുത്തല്‍.</li>
-      </ul>
-      <button class="add-button" onclick="addToCart('Bone Care', 2000, 'images/bonecare.png')">Add to Cart</button>
+    <div class="product-details">
+      <p>Slim Care promotes fat metabolism, boosts energy, reduces cravings, and helps maintain a healthy weight.</p>
+      <p>Natural slimming support with herbs and fiber. Improves digestion and detoxification.</p>
+      <p><strong>தமிழ்:</strong> கொழுப்பை கரைக்கும், பசியை கட்டுப்படுத்தும், எடை குறைக்க உதவுகிறது.</p>
+      <p><strong>മലയാളം:</strong> കൊഴുപ്പ് ചുട്ടുകൊള്ളുന്ന, വിശപ്പു കുറയ്ക്കുന്ന, സുഖകരമായ തൂക്കം നിലനിർത്തുന്നു.</p>
     </div>
-
-    <!-- === NUTRI MIX === -->
-    <div class="product-box">
-      <img src="images/nutrimix.png" alt="Nutri Mix">
-      <img src="images/nutrimixdp.png" alt="Nutri Mix Display">
-      <h2>Nutri Mix - ₹2000</h2>
-      <ul>
-        <li><strong>English:</strong> Enhances energy, provides vitamins and minerals, boosts stamina, supports digestion, builds immunity, good for kids and elders, improves appetite, balances nutrition, aids muscle growth, relieves weakness, restores vitality, increases focus, supports brain, suitable for daily use, improves gut health.</li>
-        <li><strong>Tamil:</strong> சக்தியை அதிகரிக்கிறது, ஊட்டச்சத்துக்களை வழங்குகிறது, பசிப்பை அதிகரிக்கிறது, நோய் எதிர்ப்பு சக்தியை மேம்படுத்துகிறது, வயதானவர்களுக்கும் சிறார்களுக்கும் ஏற்றது.</li>
-        <li><strong>Malayalam:</strong> ഊര്‍ജം നല്‍കുന്നു, പോഷകങ്ങള്‍ നല്‍കുന്നു, ഭക്ഷണ മോഹം വര്‍ദ്ധിപ്പിക്കുന്നു, പ്രതിരോധശേഷി, കുട്ടികള്‍ക്കും മുതിര്‍ന്നവര്‍ക്കും ഉത്തമം.</li>
-      </ul>
-      <button class="add-button" onclick="addToCart('Nutri Mix', 2000, 'images/nutrimix.png')">Add to Cart</button>
-    </div>
-
-    <!-- === SLIM CARE === -->
-    <div class="product-box">
-      <img src="images/slimcare.png" alt="Slim Care">
-      <img src="images/slimcaredp.png" alt="Slim Care Display">
-      <h2>Slim Care - ₹2000</h2>
-      <ul>
-        <li><strong>English:</strong> Supports weight loss, boosts metabolism, burns fat, controls appetite, increases stamina, detoxifies body, balances hormones, reduces bloating, improves digestion, natural slimming, supports thyroid, tones muscles, safe for daily use, no side effects, boosts confidence.</li>
-        <li><strong>Tamil:</strong> உடல் எடையைக் குறைக்க உதவுகிறது, உடலின் கொழுப்பு குறைக்கிறது, ஹார்மோன்களை சமநிலைப்படுத்துகிறது, பசிக்கு கட்டுப்பாடு செய்கிறது, மாதவிடாய் கோளாறுகளை சரிசெய்கிறது.</li>
-        <li><strong>Malayalam:</strong> തൂക്കം കുറയ്ക്കുന്നു, കൊഴുപ്പ് കുറയ്ക്കുന്നു, വിശപ്പ് നിയന്ത്രിക്കുന്നു, ദഹനം മെച്ചപ്പെടുത്തുന്നു, ശരീരം ശുദ്ധീകരിക്കുന്നു.</li>
-      </ul>
-      <button class="add-button" onclick="addToCart('Slim Care', 2000, 'images/slimcare.png')">Add to Cart</button>
-    </div>
-
-    <!-- === SKYFLAX === -->
-    <div class="product-box">
-      <img src="images/skyflax.png" alt="SkyFlax">
-      <img src="images/skyflaxdp.png" alt="SkyFlax Display">
-      <h2>SkyFlax - ₹2000</h2>
-      <ul>
-        <li><strong>English:</strong> Reduces cholesterol, improves heart, burns fat, improves hair & skin, aids growth, anti-inflammatory, boosts omega 3, reduces dryness, improves memory, supports joints, eases pain, nourishes scalp, improves energy, regulates hormones. <br><strong>Dosage:</strong> 1 softgel 2–3 times/day after food.</li>
-        <li><strong>Tamil:</strong> கொழுப்பை குறைக்கும், இதயம் ஆரோக்கியமாக்கும், ஹெயர் மற்றும் ஸ்கின் மேம்பாடு, மூட்டு வலி குறைக்கும், உடல் சக்தியை அதிகரிக்கிறது.</li>
-        <li><strong>Malayalam:</strong> കൊളസ്ട്രോള്‍ കുറയ്ക്കുന്നു, ഹൃദയാരോഗ്യം മെച്ചപ്പെടുത്തുന്നു, മുടിയും ത്വക്കും മെച്ചപ്പെടുന്നു, ഹോര്‍മോണുകള്‍ നിയന്ത്രിക്കുന്നു.</li>
-      </ul>
-      <button class="add-button" onclick="addToCart('SkyFlax', 2000, 'images/skyflax.png')">Add to Cart</button>
-    </div>
- 
-
   </div>
 
-  <!-- ✅ JAVASCRIPT -->
+  <!-- Nutri Mix -->
+  <div class="product-box">
+    <div class="product-img">
+      <img src="images/nutrimix.jpg" alt="Nutri Mix" />
+      <div class="price">₹2000</div>
+      <button class="add-to-cart" onclick="addToCart('Nutri Mix', 2000, 'images/nutrimix.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-details">
+      <p>Nutri Mix offers a complete nutritional supplement with proteins, vitamins, and minerals for overall well-being.</p>
+      <p>Enhances stamina, immunity, and muscle strength. Ideal for all age groups.</p>
+      <p><strong>தமிழ்:</strong> புரோட்டீன், வைட்டமின்கள் மற்றும் கனிமங்களுடன் உடல்நலத்திற்கான முழுமையான உணவுப் பொருள்.</p>
+      <p><strong>മലയാളം:</strong> പ്രോട്ടീൻ, വിറ്റാമിനുകൾ, മിനറലുകൾ അടങ്ങിയ പൂർണ പോഷകമുളള മിശ്രിതം.</p>
+    </div>
+  </div>
+
+  <!-- Bone Care -->
+  <div class="product-box">
+    <div class="product-img">
+      <img src="images/bonecare.jpg" alt="Bone Care" />
+      <div class="price">₹2000</div>
+      <button class="add-to-cart" onclick="addToCart('Bone Care', 2000, 'images/bonecare.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-details">
+      <p>Bone Care strengthens bones, improves joint flexibility, and helps prevent osteoporosis.</p>
+      <p>Rich in calcium, vitamin D, and herbal extracts to maintain skeletal health.</p>
+      <p><strong>தமிழ்:</strong> எலும்புகளுக்கு வலுவூட்டும், மூட்டுகளின் நெகிழ்வை மேம்படுத்தும், தசைநரம்புகளை பாதுகாக்கும்.</p>
+      <p><strong>മലയാളം:</strong> അസ്ഥികൾക്ക് ശക്തി നൽകുന്നു, സംയുക്തങ്ങൾ നന്നാക്കുന്നു, ഓസ്റ്റിയോപോറോസിസ് തടയുന്നു.</p>
+    </div>
+  </div>
+
   <script>
-    // Scroll animation for flowy effect
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.product-box').forEach((box) => {
-      observer.observe(box);
-    });
-
-    // Add to Cart logic
     function addToCart(name, price, image) {
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-      // Check if item already exists
-      const index = cart.findIndex(item => item.name === name);
-      if (index > -1) {
-        cart[index].quantity += 1;
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
       } else {
-        cart.push({ name: name, price: price, image: image, quantity: 1 });
+        cart.push({ name, price, image, quantity: 1 });
       }
-
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert(name + " has been added to your cart!");
+      alert(name + " added to cart!");
     }
   </script>
 
