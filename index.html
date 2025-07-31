@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skyway Health Food - Home</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       margin: 0;
@@ -14,59 +15,67 @@
       background-position: center;
       color: black;
     }
+
     nav {
-      text-align: center;
-      background: rgba(0, 128, 0, 0.8);
-      padding: 15px;
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+      padding: 20px;
     }
+
     nav a {
-      color: white;
-      background-color: green;
       text-decoration: none;
+      background-color: yellow;
+      color: black;
       padding: 10px 20px;
       margin: 0 10px;
+      font-weight: bold;
       border-radius: 5px;
-      font-size: 18px;
     }
-    .product-box {
-      background: rgba(211, 211, 211, 0.7);
+
+    .product-section {
+      background-color: rgba(211, 211, 211, 0.8);
       margin: 50px auto;
-      padding: 20px;
-      width: 80%;
+      padding: 30px;
+      max-width: 1000px;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
     }
-    .product-box:nth-child(even) {
+
+    .product-section:nth-child(even) {
       flex-direction: row-reverse;
     }
-    .product-img {
-      flex: 1;
-      text-align: center;
+
+    .product {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 50px;
+      gap: 20px;
     }
-    .product-img img {
-      width: 250px;
+
+    .product img {
+      width: 200px;
       height: auto;
     }
-    .product-details {
-      flex: 2;
-      padding: 0 20px;
-      font-size: 20px;
+
+    .product-description {
+      flex: 1;
     }
-    .price {
-      font-weight: bold;
-      margin-top: 10px;
+
+    h2 {
+      margin-bottom: 10px;
     }
+
     .add-to-cart {
-      background-color: yellowgreen;
-      color: black;
-      padding: 12px 20px;
+      background-color: green;
+      color: white;
       border: none;
-      font-size: 20px;
-      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -75,82 +84,102 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="cart.html">Cart</a>
-    <a href="meetings.html">Meetings</a>
+    <a href="#">Meetings</a>
   </nav>
 
-  <!-- D Care -->
-  <div class="product-box">
-    <div class="product-img">
-      <img src="images/dcare.jpg" alt="D Care" />
-      <div class="price">₹2500</div>
-      <button class="add-to-cart" onclick="addToCart('D Care', 2500, 'images/dcare.jpg')">Add to Cart</button>
-    </div>
-    <div class="product-details">
-      <p>D Care helps regulate blood sugar levels, supports insulin sensitivity, and improves overall energy levels.</p>
-      <p>Controls glucose naturally. Supports pancreas health. Improves blood flow and reduces fatigue.</p>
-      <p><strong>தமிழ்:</strong> ரத்த சர்க்கரையை கட்டுப்படுத்துகிறது, இன்சுலின் செயல்பாட்டை மேம்படுத்துகிறது, உடல் உற்சாகத்தை அதிகரிக்கிறது.</p>
-      <p><strong>മലയാളം:</strong> രക്തത്തിലെ ഷുഗർ നില নিয়ന്ത്രണം, ഇൻസുലിൻ പ്രവർത്തനം മെച്ചപ്പെടുത്തുന്നു, ഉൽസാഹം വർദ്ധിപ്പിക്കുന്നു.</p>
-    </div>
-  </div>
-
-  <!-- Slim Care -->
-  <div class="product-box">
-    <div class="product-img">
-      <img src="images/slimcare.jpg" alt="Slim Care" />
-      <div class="price">₹2000</div>
-      <button class="add-to-cart" onclick="addToCart('Slim Care', 2000, 'images/slimcare.jpg')">Add to Cart</button>
-    </div>
-    <div class="product-details">
-      <p>Slim Care promotes fat metabolism, boosts energy, reduces cravings, and helps maintain a healthy weight.</p>
-      <p>Natural slimming support with herbs and fiber. Improves digestion and detoxification.</p>
-      <p><strong>தமிழ்:</strong> கொழுப்பை கரைக்கும், பசியை கட்டுப்படுத்தும், எடை குறைக்க உதவுகிறது.</p>
-      <p><strong>മലയാളം:</strong> കൊഴുപ്പ് ചുട്ടുകൊള്ളുന്ന, വിശപ്പു കുറയ്ക്കുന്ന, സുഖകരമായ തൂക്കം നിലനിർത്തുന്നു.</p>
+  <!-- D CARE -->
+  <div class="product-section">
+    <div class="product">
+      <img src="images/dcare.png" alt="D Care" />
+      <div class="product-description">
+        <h2>D Care - ₹2500</h2>
+        <p><strong>English:</strong><br>
+        Regulates blood sugar, boosts insulin sensitivity, supports pancreas health, improves energy, reduces cravings, promotes metabolism, balances hormones, reduces fatigue, supports liver, controls inflammation, improves glucose uptake, supports vision, improves skin, prevents complications, and builds immunity.
+        </p>
+        <p><strong>Tamil:</strong><br>
+        இரத்தத்தில் சர்க்கரையை கட்டுப்படுத்துகிறது, இன்சுலின் செரிவை அதிகரிக்கிறது, பாங்கிரியாஸ் சுகாதரத்திற்கு உதவுகிறது, சக்தியை அதிகரிக்கிறது, இனிப்பு தேவையை குறைக்கிறது, மூட்டுவலியை கட்டுப்படுத்துகிறது, கல்லீரல் ஆரோக்கியத்தை மேம்படுத்துகிறது, தோலை பராமரிக்கிறது.
+        </p>
+        <p><strong>Malayalam:</strong><br>
+        രക്തത്തിലെ ഷുഗർ নিয়ന്ത്രണം, ഇൻസുലിൻ പ്രതികരണം, പാൻക്രിയാസ് സംരക്ഷണം, ഊർജ്ജം വർദ്ധനം, ത്വക്ക് സംരക്ഷണം, ദാഹം കുറയ്ക്കൽ, വീഷം കുറയ്ക്കൽ, സമയക്കാനായം മെച്ചപ്പെടുത്തൽ.
+        </p>
+        <button class="add-to-cart" onclick="addToCart('D Care', 2500)">Add to Cart</button>
+      </div>
     </div>
   </div>
 
-  <!-- Nutri Mix -->
-  <div class="product-box">
-    <div class="product-img">
-      <img src="images/nutrimix.jpg" alt="Nutri Mix" />
-      <div class="price">₹2000</div>
-      <button class="add-to-cart" onclick="addToCart('Nutri Mix', 2000, 'images/nutrimix.jpg')">Add to Cart</button>
-    </div>
-    <div class="product-details">
-      <p>Nutri Mix offers a complete nutritional supplement with proteins, vitamins, and minerals for overall well-being.</p>
-      <p>Enhances stamina, immunity, and muscle strength. Ideal for all age groups.</p>
-      <p><strong>தமிழ்:</strong> புரோட்டீன், வைட்டமின்கள் மற்றும் கனிமங்களுடன் உடல்நலத்திற்கான முழுமையான உணவுப் பொருள்.</p>
-      <p><strong>മലയാളം:</strong> പ്രോട്ടീൻ, വിറ്റാമിനുകൾ, മിനറലുകൾ അടങ്ങിയ പൂർണ പോഷകമുളള മിശ്രിതം.</p>
+  <!-- SLIM CARE -->
+  <div class="product-section">
+    <div class="product">
+      <img src="images/slimcare.png" alt="Slim Care" />
+      <div class="product-description">
+        <h2>Slim Care - ₹2000</h2>
+        <p><strong>English:</strong><br>
+        Reduces fat, controls appetite, increases metabolism, supports digestion, balances sugar levels, reduces bloating, removes toxins, improves liver function, regulates hormones, supports thyroid health, boosts energy, promotes gut health, supports weight loss, improves skin tone, reduces water retention.
+        </p>
+        <p><strong>Tamil:</strong><br>
+        கொழுப்பை குறைக்கிறது, பசியை கட்டுப்படுத்துகிறது, மெட்டபாலிசத்தை அதிகரிக்கிறது, செரிமானத்தை மேம்படுத்துகிறது, சுகர் அளவை சமப்படுத்துகிறது, வீக்கம் குறைகிறது, நச்சுகளை அகற்றுகிறது, கருப்பை சுகாதரத்தை பாதுகாக்கிறது, தோலை பளிச்சிட செய்கிறது.
+        </p>
+        <p><strong>Malayalam:</strong><br>
+        കൊഴുപ്പ് കുറയ്ക്കുന്നു, വിശപ്പ് നിയന്ത്രിക്കുന്നു, മെറ്റബോളിസം വർദ്ധിപ്പിക്കുന്നു, വിഷാംശങ്ങൾ നീക്കംചെയ്യുന്നു, ജലധാര കുറയ്ക്കുന്നു, ത്വക്ക് ശുചിത്വം മെച്ചപ്പെടുത്തുന്നു, ലിവർ സംരക്ഷണം, ഹോർമോൺ നിയന്ത്രണം.
+        </p>
+        <button class="add-to-cart" onclick="addToCart('Slim Care', 2000)">Add to Cart</button>
+      </div>
     </div>
   </div>
 
-  <!-- Bone Care -->
-  <div class="product-box">
-    <div class="product-img">
-      <img src="images/bonecare.jpg" alt="Bone Care" />
-      <div class="price">₹2000</div>
-      <button class="add-to-cart" onclick="addToCart('Bone Care', 2000, 'images/bonecare.jpg')">Add to Cart</button>
+  <!-- NUTRI MIX -->
+  <div class="product-section">
+    <div class="product">
+      <img src="images/nutrimix.png" alt="Nutri Mix" />
+      <div class="product-description">
+        <h2>Nutri Mix - ₹2000</h2>
+        <p><strong>English:</strong><br>
+        Rich in proteins, supports muscles, improves stamina, promotes brain health, boosts immunity, enhances digestion, improves heart function, reduces weakness, balances energy levels, nourishes cells, enhances memory, supports recovery, good for kids and elders, natural and safe.
+        </p>
+        <p><strong>Tamil:</strong><br>
+        புரோட்டீன் நிறைந்தது, தசைகள் வலுப்படுகிறது, மூளையின் செயல்பாட்டை மேம்படுத்துகிறது, உடல் சக்தி தருகிறது, குழந்தைகளுக்கும் முதியவர்களுக்கும் உகந்தது, இயற்கையாகவும் பாதுகாப்பாகவும் உள்ளது.
+        </p>
+        <p><strong>Malayalam:</strong><br>
+        പ്രോട്ടീൻ സമൃദ്ധം, ദേഹബല വർദ്ധിപ്പിക്കുന്നു, കുട്ടികൾക്കും മുതിർന്നവർക്കും ഉത്തമം, മനസ്സിന്റെ ശക്തി വർദ്ധിപ്പിക്കുന്നു, ആന്തരിക ശക്തി നൽകുന്നു, രോഗപ്രതിരോധ ശേഷി ഉയർത്തുന്നു.
+        </p>
+        <button class="add-to-cart" onclick="addToCart('Nutri Mix', 2000)">Add to Cart</button>
+      </div>
     </div>
-    <div class="product-details">
-      <p>Bone Care strengthens bones, improves joint flexibility, and helps prevent osteoporosis.</p>
-      <p>Rich in calcium, vitamin D, and herbal extracts to maintain skeletal health.</p>
-      <p><strong>தமிழ்:</strong> எலும்புகளுக்கு வலுவூட்டும், மூட்டுகளின் நெகிழ்வை மேம்படுத்தும், தசைநரம்புகளை பாதுகாக்கும்.</p>
-      <p><strong>മലയാളം:</strong> അസ്ഥികൾക്ക് ശക്തി നൽകുന്നു, സംയുക്തങ്ങൾ നന്നാക്കുന്നു, ഓസ്റ്റിയോപോറോസിസ് തടയുന്നു.</p>
+  </div>
+
+  <!-- BONE CARE -->
+  <div class="product-section">
+    <div class="product">
+      <img src="images/bonecare.png" alt="Bone Care" />
+      <div class="product-description">
+        <h2>Bone Care - ₹2000</h2>
+        <p><strong>English:</strong><br>
+        Strengthens bones, improves joint mobility, reduces stiffness, supports calcium absorption, reduces inflammation, improves flexibility, enhances bone density, prevents fractures, supports spine health, relieves pain, aids recovery, supports seniors, boosts endurance, and balances minerals.
+        </p>
+        <p><strong>Tamil:</strong><br>
+        எலும்புகளை வலுப்படுத்துகிறது, மூட்டு வலியை குறைக்கிறது, நெகிழ்வுத்தன்மையை அதிகரிக்கிறது, எலும்பின் அடர்த்தியை மேம்படுத்துகிறது, முதியவர்கள் பயன்படலாம், இயற்கையானது.
+        </p>
+        <p><strong>Malayalam:</strong><br>
+        അസ്ഥികളെ ശക്തിപ്പെടുത്തുന്നു, മൂട്ട് വേദന കുറയ്ക്കുന്നു, സുഖകരമായ ചലനങ്ങൾ, കാല്ഷ്യത്തിന്റെ ആഗിരണം മെച്ചപ്പെടുത്തുന്നു, എളുപ്പത്തിൽ പൊട്ടൽ ഒഴിവാക്കുന്നു, മുതിർന്നവർക്കും അനുയോജ്യം.
+        </p>
+        <button class="add-to-cart" onclick="addToCart('Bone Care', 2000)">Add to Cart</button>
+      </div>
     </div>
   </div>
 
   <script>
-    function addToCart(name, price, image) {
+    function addToCart(productName, price) {
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const existing = cart.find(item => item.name === name);
+      const existing = cart.find(item => item.name === productName);
       if (existing) {
         existing.quantity += 1;
       } else {
-        cart.push({ name, price, image, quantity: 1 });
+        cart.push({ name: productName, price: price, quantity: 1 });
       }
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert(name + " added to cart!");
+      alert(productName + " added to cart!");
     }
   </script>
-
 </body>
 </html>
+
