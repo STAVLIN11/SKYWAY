@@ -3,183 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skyway Health Food - Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('images/background.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      color: black;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: transparent;
-      padding: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      background-color: yellow;
-      color: black;
-      padding: 10px 20px;
-      margin: 0 10px;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-
-    .product-section {
-      background-color: rgba(211, 211, 211, 0.8);
-      margin: 50px auto;
-      padding: 30px;
-      max-width: 1000px;
-      border-radius: 10px;
-    }
-
-    .product-section:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    .product {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 50px;
-      gap: 20px;
-    }
-
-    .product img {
-      width: 200px;
-      height: auto;
-    }
-
-    .product-description {
-      flex: 1;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    .add-to-cart {
-      background-color: green;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-  </style>
+  <title>Skyway Health Food</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <img src="logo.png" alt="Skyway Logo" class="center-logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cart.html">Cart</a>
-    <a href="#">Meetings</a>
-  </nav>
+  <main>
+    <section class="product" id="dcare">
+      <img src="dcare.jpg" alt="D Care" />
+      <h2>D Care - ₹2500</h2>
+      <p>English: Helps in diabetes control...<br/>Tamil: சர்க்கரை நோயை கட்டுப்படுத்துகிறது...<br/>Malayalam: പ്രമേഹം നിയന്ത്രിക്കുന്നു...</p>
+      <button onclick="addToCart('D Care', 2500, 'dcare.jpg')">Add to Cart</button>
+    </section>
 
-  <!-- D CARE -->
-  <div class="product-section">
-    <div class="product">
-      <img src="images/dcare.png" alt="D Care" />
-      <div class="product-description">
-        <h2>D Care - ₹2500</h2>
-        <p><strong>English:</strong><br>
-        Regulates blood sugar, boosts insulin sensitivity, supports pancreas health, improves energy, reduces cravings, promotes metabolism, balances hormones, reduces fatigue, supports liver, controls inflammation, improves glucose uptake, supports vision, improves skin, prevents complications, and builds immunity.
-        </p>
-        <p><strong>Tamil:</strong><br>
-        இரத்தத்தில் சர்க்கரையை கட்டுப்படுத்துகிறது, இன்சுலின் செரிவை அதிகரிக்கிறது, பாங்கிரியாஸ் சுகாதரத்திற்கு உதவுகிறது, சக்தியை அதிகரிக்கிறது, இனிப்பு தேவையை குறைக்கிறது, மூட்டுவலியை கட்டுப்படுத்துகிறது, கல்லீரல் ஆரோக்கியத்தை மேம்படுத்துகிறது, தோலை பராமரிக்கிறது.
-        </p>
-        <p><strong>Malayalam:</strong><br>
-        രക്തത്തിലെ ഷുഗർ নিয়ന്ത്രണം, ഇൻസുലിൻ പ്രതികരണം, പാൻക്രിയാസ് സംരക്ഷണം, ഊർജ്ജം വർദ്ധനം, ത്വക്ക് സംരക്ഷണം, ദാഹം കുറയ്ക്കൽ, വീഷം കുറയ്ക്കൽ, സമയക്കാനായം മെച്ചപ്പെടുത്തൽ.
-        </p>
-        <button class="add-to-cart" onclick="addToCart('D Care', 2500)">Add to Cart</button>
-      </div>
-    </div>
-  </div>
+    <section class="product" id="bonecare">
+      <img src="bonecare.jpg" alt="Bone Care" />
+      <h2>Bone Care - ₹2000</h2>
+      <p>English: Strengthens bones...<br/>Tamil: எலும்புகளை வலுப்படுத்துகிறது...<br/>Malayalam: അസ്ഥികളെ ശക്തിപ്പെടുത്തുന്നു...</p>
+      <button onclick="addToCart('Bone Care', 2000, 'bonecare.jpg')">Add to Cart</button>
+    </section>
 
-  <!-- SLIM CARE -->
-  <div class="product-section">
-    <div class="product">
-      <img src="images/slimcare.png" alt="Slim Care" />
-      <div class="product-description">
-        <h2>Slim Care - ₹2000</h2>
-        <p><strong>English:</strong><br>
-        Reduces fat, controls appetite, increases metabolism, supports digestion, balances sugar levels, reduces bloating, removes toxins, improves liver function, regulates hormones, supports thyroid health, boosts energy, promotes gut health, supports weight loss, improves skin tone, reduces water retention.
-        </p>
-        <p><strong>Tamil:</strong><br>
-        கொழுப்பை குறைக்கிறது, பசியை கட்டுப்படுத்துகிறது, மெட்டபாலிசத்தை அதிகரிக்கிறது, செரிமானத்தை மேம்படுத்துகிறது, சுகர் அளவை சமப்படுத்துகிறது, வீக்கம் குறைகிறது, நச்சுகளை அகற்றுகிறது, கருப்பை சுகாதரத்தை பாதுகாக்கிறது, தோலை பளிச்சிட செய்கிறது.
-        </p>
-        <p><strong>Malayalam:</strong><br>
-        കൊഴുപ്പ് കുറയ്ക്കുന്നു, വിശപ്പ് നിയന്ത്രിക്കുന്നു, മെറ്റബോളിസം വർദ്ധിപ്പിക്കുന്നു, വിഷാംശങ്ങൾ നീക്കംചെയ്യുന്നു, ജലധാര കുറയ്ക്കുന്നു, ത്വക്ക് ശുചിത്വം മെച്ചപ്പെടുത്തുന്നു, ലിവർ സംരക്ഷണം, ഹോർമോൺ നിയന്ത്രണം.
-        </p>
-        <button class="add-to-cart" onclick="addToCart('Slim Care', 2000)">Add to Cart</button>
-      </div>
-    </div>
-  </div>
+    <section class="product" id="nutrimix">
+      <img src="nutrimix.jpg" alt="Nutri Mix" />
+      <h2>Nutri Mix - ₹2000</h2>
+      <p>English: Provides essential nutrients...<br/>Tamil: தேவையான ஊட்டச்சத்துக்களை வழங்குகிறது...<br/>Malayalam: ആവശ്യമായ പോഷകങ്ങൾ നൽകുന്നു...</p>
+      <button onclick="addToCart('Nutri Mix', 2000, 'nutrimix.jpg')">Add to Cart</button>
+    </section>
 
-  <!-- NUTRI MIX -->
-  <div class="product-section">
-    <div class="product">
-      <img src="images/nutrimix.png" alt="Nutri Mix" />
-      <div class="product-description">
-        <h2>Nutri Mix - ₹2000</h2>
-        <p><strong>English:</strong><br>
-        Rich in proteins, supports muscles, improves stamina, promotes brain health, boosts immunity, enhances digestion, improves heart function, reduces weakness, balances energy levels, nourishes cells, enhances memory, supports recovery, good for kids and elders, natural and safe.
-        </p>
-        <p><strong>Tamil:</strong><br>
-        புரோட்டீன் நிறைந்தது, தசைகள் வலுப்படுகிறது, மூளையின் செயல்பாட்டை மேம்படுத்துகிறது, உடல் சக்தி தருகிறது, குழந்தைகளுக்கும் முதியவர்களுக்கும் உகந்தது, இயற்கையாகவும் பாதுகாப்பாகவும் உள்ளது.
-        </p>
-        <p><strong>Malayalam:</strong><br>
-        പ്രോട്ടീൻ സമൃദ്ധം, ദേഹബല വർദ്ധിപ്പിക്കുന്നു, കുട്ടികൾക്കും മുതിർന്നവർക്കും ഉത്തമം, മനസ്സിന്റെ ശക്തി വർദ്ധിപ്പിക്കുന്നു, ആന്തരിക ശക്തി നൽകുന്നു, രോഗപ്രതിരോധ ശേഷി ഉയർത്തുന്നു.
-        </p>
-        <button class="add-to-cart" onclick="addToCart('Nutri Mix', 2000)">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- BONE CARE -->
-  <div class="product-section">
-    <div class="product">
-      <img src="images/bonecare.png" alt="Bone Care" />
-      <div class="product-description">
-        <h2>Bone Care - ₹2000</h2>
-        <p><strong>English:</strong><br>
-        Strengthens bones, improves joint mobility, reduces stiffness, supports calcium absorption, reduces inflammation, improves flexibility, enhances bone density, prevents fractures, supports spine health, relieves pain, aids recovery, supports seniors, boosts endurance, and balances minerals.
-        </p>
-        <p><strong>Tamil:</strong><br>
-        எலும்புகளை வலுப்படுத்துகிறது, மூட்டு வலியை குறைக்கிறது, நெகிழ்வுத்தன்மையை அதிகரிக்கிறது, எலும்பின் அடர்த்தியை மேம்படுத்துகிறது, முதியவர்கள் பயன்படலாம், இயற்கையானது.
-        </p>
-        <p><strong>Malayalam:</strong><br>
-        അസ്ഥികളെ ശക്തിപ്പെടുത്തുന്നു, മൂട്ട് വേദന കുറയ്ക്കുന്നു, സുഖകരമായ ചലനങ്ങൾ, കാല്ഷ്യത്തിന്റെ ആഗിരണം മെച്ചപ്പെടുത്തുന്നു, എളുപ്പത്തിൽ പൊട്ടൽ ഒഴിവാക്കുന്നു, മുതിർന്നവർക്കും അനുയോജ്യം.
-        </p>
-        <button class="add-to-cart" onclick="addToCart('Bone Care', 2000)">Add to Cart</button>
-      </div>
-    </div>
-  </div>
+    <section class="product" id="slimcare">
+      <img src="slimcare.jpg" alt="Slim Care" />
+      <h2>Slim Care - ₹2000</h2>
+      <p>English: Aids in weight loss...<br/>Tamil: எடையைக் குறைக்க உதவுகிறது...<br/>Malayalam: ഭാരം കുറയ്ക്കാൻ സഹായിക്കുന്നു...</p>
+      <button onclick="addToCart('Slim Care', 2000, 'slimcare.jpg')">Add to Cart</button>
+    </section>
+  </main>
 
   <script>
-    function addToCart(productName, price) {
+    function addToCart(name, price, image) {
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const existing = cart.find(item => item.name === productName);
+      const existing = cart.find(p => p.name === name);
       if (existing) {
         existing.quantity += 1;
       } else {
-        cart.push({ name: productName, price: price, quantity: 1 });
+        cart.push({ name, price, quantity: 1, image });
       }
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert(productName + " added to cart!");
+      alert(name + " added to cart!");
     }
   </script>
 </body>
 </html>
-
